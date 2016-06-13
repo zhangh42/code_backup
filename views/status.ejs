@@ -35,22 +35,22 @@
 		}
 	</style>
 </head>
-	<body background="/F:/long.png">
+	<body background="/images/bg.png">
 		<div class="left">
 			<div class="major_function">
-				</br>
+				<br/>
 				<h4 align="center">主要功能</h4>
 				<form align="center">
-				<a href="/D:/HTML/首页.html" style="text-decoration:none">
-				首&nbsp&nbsp页
-				</br></br>
-				<a href="/D:/HTML/写信.html" style="text-decoration:none">
-				写&nbsp&nbsp信
-				</br></br>
-				<a href="/D:/HTML/收信.html" style="text-decoration:none">
-				收&nbsp&nbsp信
-				</br></br>
-				<a href="/D:/HTML/查看状态.html" style="text-decoration:none">
+				<a href="home" style="text-decoration:none">
+				首&nbsp&nbsp页</a>
+				<br/><br/>
+				<a href="write" style="text-decoration:none">
+				写&nbsp&nbsp信</a>
+				<br/><br/>
+				<a href="receive" style="text-decoration:none">
+				收&nbsp&nbsp信</a>
+				<br/><br/>
+				<a href="status" style="text-decoration:none">
 				查看状态
 				</a>
 				</form>
@@ -58,16 +58,16 @@
 		
 
 			<div class="user_information" align="center">
-				</br></br></br></br></br>
+				<br/><br/><br/><br/><br/>
 				<p>
 				<b>头像：</b>
-				<img src="/F:/头像.jpg" width="28" height="28" />
+				<img src="/images/head_image.png" width="28" height="28" />
 				</p>
 				<b>昵称：</b>
-				XXX
-				</br></br>
+				{%= username %}
+				<br/><br/>
 				<b>账号：</b>
-				XXX
+				{%= email_id %}
 			</div>
 		</div>
 	<div class="right">
@@ -75,9 +75,32 @@
 			
 		</div>
 		<div class="prompt_information" align="center">
-			</br></br></br>
-			<textarea cols="110" rows="15">
-			</textarea>
+			<form>
+			未到达信件
+			<select name="cars" class="checkbox">
+			<option value="letter1">信件1</option>
+			<option value="letter2">信件2</option>
+			<option value="letter3">信件3</option>
+			<option value="letter4">信件4</option>
+			</select>
+		</form>
+		<textarea cols="102" rows="20">
+
+
+			信件到哪了。
+			
+
+			信件所在城市天气。
+			
+
+			已发送天数。
+			
+
+			剩余到达天数。
+
+			
+
+		</textarea>
 		</div>
 	</div>
 </body>

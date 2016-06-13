@@ -40,22 +40,22 @@
 	</style>
 
 </head>
-	<body background="/F:/long.png">
+	<body background="/images/bg.png">
 		<div class="left">
 			<div class="major_function">
-				</br>
+				<br/>
 				<h4 align="center">主要功能</h4>
 				<form align="center">
-				<a href="/D:/HTML/首页.html" style="text-decoration:none">
-				首&nbsp&nbsp页
-				</br></br>
-				<a href="/D:/HTML/写信.html" style="text-decoration:none">
-				写&nbsp&nbsp信
-				</br></br>
-				<a href="/D:/HTML/收信.html" style="text-decoration:none">
-				收&nbsp&nbsp信
-				</br></br>
-				<a href="/D:/HTML/查看状态.html" style="text-decoration:none">
+				<a href="home" style="text-decoration:none">
+				首&nbsp&nbsp页</a>
+				<br/><br/>
+				<a href="write" style="text-decoration:none">
+				写&nbsp&nbsp信</a>
+				<br/><br/>
+				<a href="receive" style="text-decoration:none">
+				收&nbsp&nbsp信</a>
+				<br/><br/>
+				<a href="status" style="text-decoration:none">
 				查看状态
 				</a>
 				</form>
@@ -66,13 +66,13 @@
 				</br></br></br></br></br>
 				<p>
 				<b>头像：</b>
-				<img src="/F:/头像.jpg" width="28" height="28" />
+				<img src="/images/head_image.png" alt="用户头像" width="100" height="100" />
 				</p>
 				<b>昵称：</b>
-				XXX
-				</br></br>
+				{%= username %}
+				<br/><br/>
 				<b>账号：</b>
-				XXX
+				{%= email_id %}
 			</div>
 		</div>
 	<div class="right">
