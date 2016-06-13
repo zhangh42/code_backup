@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<script type="text/javascript">
+		function validate_form(thisForm) {
+			var name = thisForm.username;
+			var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/
+			if(name.value.length == 0 || !myreg.test(name.value)){
+				alert("请输入正确的邮箱");
+				return false;
+			}
+
+			var pass = thisForm.password.value;
+			if(value.length <= 0){
+				alert("密码长度不能为空");
+				return false;
+			}
+
+			return true;
+		}
+	</script>
+
+	<style type="text/css">
+		body{
+			background-image: url("/images/bg.png");
+		}
+
+		.inputer {
+			width: 300px;
+			height: 30px;
+		}
+
+		#admin_div {
+			position: relative;
+			right: 10%;
+			top: 100px;
+			float: right;
+			border: 1px solid black;
+			width: 400px;
+			height: 250px;
+		}
+
+		a {
+			/* blue colors for links too */
+			color: inherit;
+			/* no underline */
+			text-decoration: inherit;
+		}
+	</style>
+
+</head>
+
+<body>
+<div id="admin_div" align="center">
+	<h1 align="center"> 邮箱登陆</h1>
+	<form name="form1" action="admin_form" method="POST" onsubmit="return validate_form(this)">
+		<label>用户</label>：<input type="text" name="username" maxlength="20" height="5" class="inputer" />
+		<br/>
+		<br/>
+		<label>密码</label>：<input type="password" name="password" maxlength="20" class="inputer" />
+		<br/>
+		<br/>
+		<button><a href="register">注册</a></button>&nbsp&nbsp&nbsp
+		<input type="submit" value="登陆" />
+	</form>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<script type="text/javascript">
+		function validate_form(thisForm) {
+
+			var email_id = thisForm.email_id;
+			var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/
+			if(email_id.value.length == 0 || !myreg.test(email_id.value)){
+				alert("请输入正确的邮箱");
+				return false;
+			}
+
+			var name = thisForm.username.value;
+			if(name.length <= 0){
+				alert("请输入用户名");
+				return false;
+			}
+
+			var pass1 = thisForm.password1.value;
+			var pass2 = thisForm.password2.value;
+			if(pass1.length <= 0 || pass2.length <= 0){
+				alert("密码长度不能为空");
+				return false;
+			}else if(pass1 != pass2){
+				alert("密码不一致");
+				return false;
+			}
+
+			return true;
+		}
+	</script>
+
+	<style>
+		.in {
+			width: 300px;
+			height: 30px;
+		}
+
+		#register_div {
+			border: 1px solid black;
+			width: 420px;
+			height: 420px;
+		}
+
+		body{
+			background-image: url("/images/bg.png");
+		}
+	</style>
+</head>
+
+<body>
+</br>
+</br>
+</br>
+<div align="center">
+	<div align="center" id="register_div">
+		<h1>邮箱注册</h1>
+
+		<form name="form1" action="register_form" method="POST" onsubmit="return validate_form(this)">
+			<label>邮箱账号</label>&nbsp<input type="text" name="email_id" maxlength="20" class="in" /></br>
+			</br>
+
+			<label>用&nbsp&nbsp户</label>&nbsp<input type="text" name="username" maxlength="12" class="in" /></br>
+			</br>
+
+			<label>密&nbsp&nbsp码</label>&nbsp<input type="password" name="password1" maxlength="20" class="in" /></br>
+			</br>
+
+			<label>密码确认</label>&nbsp<input type="password" name="password2" maxlength="20" class="in" /></br>
+			</br>
+
+			<label>地&nbsp&nbsp址</label>&nbsp<input type="text" name="city" maxlength="12" class="in" /></br>
+			</br>
+
+			<label>性别</label>&nbsp<input type="radio" checked="checked" name="Sex" value="male" />男
+
+
+			<input type="radio" name="Sex" value="female" />女<br/>
+			<br/>
+			<input type="reset" value="重置" /> &nbsp&nbsp&nbsp
+			<input type="submit" value="提交注册" />
+			</br>
+			</br>
+		</form>
+	</div>
+</div>
+
+</body>
+
+</html>
