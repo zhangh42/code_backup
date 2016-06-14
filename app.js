@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var letter = require('./routes/letter')
 
 var app = express();
 
@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser("apdtedas"));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // 提高安全
@@ -28,7 +28,7 @@ app.use(helmet());
 app.disable("x-powered-by");
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/letter', letter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
