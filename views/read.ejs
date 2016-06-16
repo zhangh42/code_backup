@@ -69,10 +69,10 @@
                 <img src="/images/head_image.png" width="100" height="100" />
                 </p>
                 <b>昵称：</b>
-                <%= username %>
+                <%= me.username %>
                 <br/><br/>
                 <b>账号：</b>
-                <%= email_id %>
+                <%= me.email_id %>
             </div>
         </div>
     <div class="right">
@@ -80,11 +80,12 @@
             
         </div>
         <div class="prompt_information" >
-            <h3 align="center">
-                标题
+            <h3>
+                来自: <%= letter.From_email_id %>
             </h3>
-            <p>
-                &nbsp&nbsp信件内容。
+            <p>正文内容为：</p>
+            <p style="border: 1px dashed red">
+                <%= letter.content %>
             </p>
         </div>
     </div>
