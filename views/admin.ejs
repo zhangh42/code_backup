@@ -5,8 +5,12 @@
 	<meta charset="utf-8">
 
 	<script type="text/javascript">
+		<% if (! isOK ) { %>
+        alert("密码或者帐号错误");
+		<% } %>
+
 		function validate_form(thisForm) {
-			var name = thisForm.username;
+			var name = thisForm.email_id;
 			var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/
 			if(name.value.length == 0 || !myreg.test(name.value)){
 				alert("请输入正确的邮箱");
@@ -14,7 +18,7 @@
 			}
 
 			var pass = thisForm.password.value;
-			if(value.length <= 0){
+			if(pass.length <= 0){
 				alert("密码长度不能为空");
 				return false;
 			}
@@ -56,14 +60,14 @@
 <body>
 <div id="admin_div" align="center">
 	<h1 align="center"> 邮箱登陆</h1>
-	<form name="form1" action="admin_form" method="POST" onsubmit="return validate_form(this)">
-		<label>用户</label>：<input type="text" name="username" maxlength="20" height="5" class="inputer" />
+	<form name="form1" action="admin" method="POST" onsubmit="return validate_form(this)">
+		<label>用户</label>：<input type="text" name="email_id" maxlength="20" height="5" class="inputer" />
 		<br/>
 		<br/>
 		<label>密码</label>：<input type="password" name="password" maxlength="20" class="inputer" />
 		<br/>
 		<br/>
-		<button><a href="register">注册</a></button>&nbsp&nbsp&nbsp
+		<button type="button"><a href="register">注册</a></button>&nbsp&nbsp&nbsp
 		<input type="submit" value="登陆" />
 	</form>
 </div>
